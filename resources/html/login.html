@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form id="login-form" method="post" enctype="application/x-www-form-urlencoded" action="">
+                <input type="text" name="username" />
+                <input type="password" name="password" />
+                <input type="submit" value="submit" />
+            </form>
+            <br/>
+            <div class="result"></div>
+        </div>
+    <script src="js/lib/lib.js"></script>
+    <script>
+        $('#login-form').on('submit', function( e ){
+            e.preventDefault();
+
+            var values = $(this).serializeArray();
+
+            $.post('http://'+ document.location.hostname +':9876/login', values, "JSON")
+                .then(function(response){
+                    console.log(response);
+
+                    $('.result').html(response.data.token);
+                    Cookies.set('server_port', response.data.port);
+                    Cookies.set('client_token', response.data.token);
+                    document.location.href = '/';
+                })
+                .fail(function(response){
+                    $('.result').html(response.error.message);
+                });
+
+        });
+    </script>
+    </body>
+</html>

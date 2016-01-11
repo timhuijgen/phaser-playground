@@ -1,0 +1,41 @@
+{
+  "name": "phaser-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:build": "gulp server:build",
+    "server:dev": "gulp server:dev",
+    "client": "gulp client",
+    "client:dev": "gulp client:dev"
+  },
+  "author": "Tim Huijgen",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "browser-sync": "^2.11.0",
+    "eventemitter3": "^1.1.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+
+    "lodash": "^3.10.1",
+
+    "webpack": "^1.12.9",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp-nodemon": "^2.0.4",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
